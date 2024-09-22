@@ -131,7 +131,7 @@ void compute_priority()
     {
         for (int j = 0; j < BOUNDARY; ++j)
         {
-            if (board[i][j] != 0 && board[i][j] % 2 != myColor)
+            if (board[i][j] != 0 && (board[i][j] % 2 != myColor))
             {
                 // add priority
                 for (int r = -1; r < 2; ++r)
@@ -221,11 +221,12 @@ int main(int argc, char *argv[])
     char *step_file = argv[3];
 
     // color
-    int myColor;
     if (!strcmp(color, "gray"))
         myColor = 1;
     else
         myColor = 0;
+
+    printf("color: %d\n\n", myColor);
 
     // board input
     FILE *myboard = fopen(board_file, "r");
