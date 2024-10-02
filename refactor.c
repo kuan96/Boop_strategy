@@ -124,7 +124,7 @@ void init(char *color, char *board_file, int board[BOUND][BOUND], int priority[B
 
 int cat_or_kitten(int cat_kitten_num[2][2], char *step_file)
 {
-    FILE *myStep = fopen(step_file, "a");
+    FILE *myStep = fopen(step_file, "w");
     int catOrKitten;
 
     if (cat_kitten_num[MY_COLOR][0] > 0)
